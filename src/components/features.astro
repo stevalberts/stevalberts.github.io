@@ -1,0 +1,70 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Mobile Development",
+    description:
+      "I build custom desktop and mobile apps for iOS and Android, leveraging cutting-edge technologies to deliver seamless user experiences that keep your customers engaged and coming back.",
+    icon: "bx:bx-mobile-alt",
+  },
+  {
+    title: "PWA Development",
+    description:
+      "Get the best of both worlds! I create fast, reliable, and engaging web applications that provide a native app-like experience across all devices no app store needed.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Data Engineering",
+    description:
+      "Transform your raw data into business gold! I design, build, and optimize data pipelines, warehouses, and lakes to help you achieve your business goals. With advanced analytics, I empower smarter decision-making and seamless data management.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Business Intelligence",
+    description:
+      "Make informed decisions with confidence. I extract actionable insights from complex data, helping you identify areas for improvement, optimize operations, and achieve your business objectives faster.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "UI/UX Design",
+    description:
+      "Design is more than just looks it's about results. I create intuitive, user-centered designs that drive engagement, conversions, and customer satisfaction.",
+    icon: "bx:bx-user",
+  },
+  {
+    title: "AI Chatbots",
+    description:
+      "Revolutionize how you interact with your customers. I develop intelligent AI-powered chatbots that provide instant support, handle customer queries, and enhance user experience all while reducing operational costs.",
+    icon: "bx:bxs-bot",
+  },
+];
+---
+</hr>
+</br>
+</br>
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Everything you need for your business.
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    I specialize in providing top-notch digital solutions tailored to businesses looking to scale in a competitive landscape. Here's how I can help you:
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

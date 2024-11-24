@@ -1,0 +1,86 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingCard from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Personal",
+    price: "Starter",
+    popular: false,
+    features: [
+      "Mobile App Development",
+      "Progressive Web Apps",
+      "Basic Business Insights",
+      "Simple AI Chatbot",
+      "Basic Integrations",
+      "Customer Support",
+      "Starting at $50/hour",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Startup",
+    price: "Growth",
+    popular: true,
+    features: [
+      "All Starter Features",
+      "Advanced BI Dashboards",
+      "Advanced PWAs",
+      "Customizable AI Chatbots",
+      "UI/UX Design Consultation",
+      "Priority Support",
+      "Starting at $100/hour",
+    ],
+    button: {
+      text: "Contact Now",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Enterprise",
+    price: "Domination",
+    popular: false,
+    features: [
+      "All Growth Features",
+      "Advanced Apps & PWAs",
+      "Data Science Solutions",
+      "LLM / AI Integration",
+      "Full UI/UX Design Services",
+      "24/7 Expert Support",
+      "Custom Pricing",
+    ],
+    button: {
+      text: "Contact Us",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Packages</Fragment>
+      <Fragment slot="desc">
+        Tailored Solutions to Drive Your Business Forward
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+
+    <div class:list={["mt-16","center" && "text-center"]}>
+      <p class="text-lg mt-4 text-slate-600">
+        <slot name="desc"> With personalized attention and expertise, I deliver results that drive
+          real business growth. Let’s turn your ideas into innovative solutions
+          and take your business to the next level.</slot>
+      </p>
+    </div>
+  </Container>
+</Layout>
